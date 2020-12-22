@@ -3,10 +3,11 @@
 ### FUNCTION 1
 
 Since the schema is designed keeping the queries in mind (Query Driven Design approach) , the last played game of a player already exists in the Player document.
+
 Psuedocode:
-  __Select all the player-documents from the players-collection
-   Query the last_game_played and put a _<= (input date)_ condition
-   Insert the result player Ids in an array__
+ - __Select all the player-documents from the players-collection
+ - __Query the last_game_played and put a _<= (input date)_ condition
+ - __Insert the result player Ids in an array__
                   
 
 MongoDB Shell command:
@@ -23,16 +24,13 @@ db.players.find(
 For this function, a script can be written in javascript in order to iterate through everyplayer. In the mongodb shell command, I have used __Aggregation__ and __Pipelining__ to run multiple stages of the process in one command.
 
  Psuedocode:
- __For every player_id:__
- 
- __Select all the review-documents from the reviews-collection
- by MATCHING with the player_id
- SORT the result in descending _(latest to oldest)_
- LIMIT the documents to number of past games _(input by user)_
- AVERAGE the ratings
-insert the resulting object into an array__
- 
- __For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)__ 
+- __For every player_id:__ 
+- __Select all the review-documents from the reviews-collection
+- __SORT the result in descending _(latest to oldest)_
+- __LIMIT the documents to number of past games _(input by user)_
+- __AVERAGE the ratings
+- __insert the resulting object into an array__ 
+- __For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)__ 
  
 
 ```javascript
@@ -47,13 +45,13 @@ db.reviews.aggregate(
 ```
 
 ### FUNTION 3
-For this, we have three inputs, a date range and the field id. This algorithm is also based on the schema shown in the JSON file which can be improved a lot.
+For this, we have three inputs, a date range and a field id. This algorithm is also based on the schema shown in the JSON file and can be improved a lot.
 
 Psuedocode:
-__Select the field-document by matching field_id from the fields-collection
-Deconstruct the array to produce a document for each array element
-Match these documents with the given conditions
-Count and store the number of documents that fullfil the conditions
+- __Select the field-document by matching field_id from the fields-collection
+- __Deconstruct the array to produce a document for each array element
+- __Match these documents with the given conditions
+- __Count and store the number of documents that fullfil the conditions
 
 
 ````javascript
