@@ -26,11 +26,11 @@ For this function, a script can be written in javascript in order to iterate thr
  Psuedocode:
 - __For every player_id:__ 
 - __Select all the review-documents from the reviews-collection__
-- __SORT the result in descending__ _(latest to oldest)_
-- __LIMIT the documents to number of past games__ _(input by user)_
-- __AVERAGE the ratings__
-- __insert the resulting object into an array__ 
-- __For loop with comparison operator on each average rating of the array.__ _(Comparison parameter to be input by user)_
+- __Sort the result in descending__ _(latest to oldest)_
+- __Limit the documents to number of past games__ _(input by user)_
+- __Average the ratings__
+- __Insert the resulting object into an _avg_star_ array__ 
+- __For loop with  _< input_rating_ on each element of the _avg_star_ array.__ _(rating to be input by user)_
  
  
 MongoDB Shell command:
