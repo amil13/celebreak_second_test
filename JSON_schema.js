@@ -48,7 +48,7 @@
         "rating_id": "unique_rating_id",
         "rater": "player_id",
         "gameid":"game_id",
-        "stars": 4, #1 to 5
+        "stars": 4, //1 to 5
         "comment":"comment",
         "date":"date of review"   
     },
