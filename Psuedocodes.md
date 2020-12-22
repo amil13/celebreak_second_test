@@ -2,12 +2,11 @@
 
 ### FUNCTION 1
 
-Since the schema is designed keeping the queries in mind, the last played game of a player already exists in the Player document.
+Since the schema is designed keeping the queries in mind (Query Driven Design approach) , the last played game of a player already exists in the Player document.
 Psuedocode:
-   SELECT *
+  __SELECT *
    FROM players
-   WHERE last_game_played <= (input date)
-   
+   WHERE last_game_played <= (input date)__
                   
 
 MongoDB Shell command:
@@ -21,19 +20,19 @@ db.players.find(
                 
                 
 ### FUNCTION 2
-For this function, a script can be written in javascript in order to iterate through everyplayer. In the mongodb shell command, I have used pipelining to run multiple stages of the process in one command.
+For this function, a script can be written in javascript in order to iterate through everyplayer. In the mongodb shell command, I have used __Aggregation__ and __Pipelining__ to run multiple stages of the process in one command.
 
  Psuedocode:
- For every player_id:
+ __For every player_id:__
  
- FROM reviews collection
+ __FROM reviews collection
  FETCH all the documents by MATCHING with the player_id
  SORT the result in descending _(latest to oldest)_
  LIMIT the documents to number of past games _(input by user)_
  AVERAGE the ratings
- TOARRAY resulting object
+ TOARRAY resulting object__
  
- For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)_
+ __For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)__ 
  
 
 ```javascript
