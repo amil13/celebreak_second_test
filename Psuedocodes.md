@@ -21,14 +21,31 @@ db.players.find(
                 
                 
 ### FUNCTION 2
+For this function, a script can be written in javascript in order to iterate through everyplayer. In the mongodb shell command, I have used pipelining to run multiple stages of the process in one command.
+
+ Psuedocode:
+ For every player_id:
+ 
+ FROM reviews collection
+ FETCH all the documents by MATCHING with the player_id
+ SORT the result in descending _(latest to oldest)_
+ LIMIT the documents to number of past games _(input by user)_
+ AVERAGE the ratings
+ TOARRAY resulting object
+ 
+ For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)_
  
 
 ```javascript
 db.reviews.aggregate(
-                    {$match:{rater:1112}},
-                    {$sort:{date:-1}},
-                    {$limit:3}, 
+                    {$match:{rater:$player_id}},       //fetch all the documents by player_id
+                    {$sort:{date:-1}},                 // Latest to oldest
+                    {$limit:"number of past games"},   //number of past games input by users 
                     {$group:{
                              _id:"$rater","avg":{"$avg":"$stars"}
-                                                                }})
+                                                                }})                                                               
+                                                               
 ```
+
+
+###FUNTION 3
