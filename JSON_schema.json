@@ -47,7 +47,7 @@
         "rating_id": "unique_rating_id",
         "rater": "player_id",
         "gameid":"game_id",
-        "stars": 4, //1 to 5
+        "stars": 4, #1 to 5
         "comment":"comment",
         "date":"date of review"   
     },
@@ -57,7 +57,7 @@
         {
             "cid":100,
             "gamechat": false,
-            "ids":[/*playerIds*/],
+            "ids":[],         #PlayerIds
             "messages":[
               {"from":"playerid1", "to":"playerid2", "text":"Hey Dude! You coming to play?"},
               {"from":"playerid2", "to":"playerid1", "text":"Sure man"}
