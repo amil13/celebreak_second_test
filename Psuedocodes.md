@@ -30,7 +30,7 @@ For this function, a script can be written in javascript in order to iterate thr
 - __LIMIT the documents to number of past games__ _(input by user)_
 - __AVERAGE the ratings__
 - __insert the resulting object into an array__ 
-- __For loop with comparison operator on each average rating of the array. _(Comparison parameter to be input by user)__ 
+- __For loop with comparison operator on each average rating of the array.__ _(Comparison parameter to be input by user)_
  
 
 ```javascript
