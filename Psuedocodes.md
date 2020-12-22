@@ -32,7 +32,8 @@ For this function, a script can be written in javascript in order to iterate thr
 - __insert the resulting object into an array__ 
 - __For loop with comparison operator on each average rating of the array.__ _(Comparison parameter to be input by user)_
  
-
+ 
+MongoDB Shell command:
 ```javascript
 db.reviews.aggregate(
                     {$match:{rater:$player_id}},       //fetch all the documents by player_id
@@ -54,6 +55,7 @@ Psuedocode:
 - __Count and store the number of documents that fullfil the conditions__
 
 
+MongoDB Shell command:
 ````javascript
 db.fields.aggregate(
 {$match:{field_id:100}},                  // Selecting a specific field , user input                       
