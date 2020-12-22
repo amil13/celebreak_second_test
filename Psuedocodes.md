@@ -44,7 +44,7 @@ db.reviews.aggregate(
                                                                
 ```
 
-### FUNTION 3
+### FUNCTION 3
 For this, we have three inputs, a date range and a field id. This algorithm is also based on the schema shown in the JSON file and can be improved a lot.
 
 Psuedocode:
